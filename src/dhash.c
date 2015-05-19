@@ -64,14 +64,14 @@ uint64_t dhash_compute_internal(MagickWand* magick_wand, dhash_err* error) {
     size_t width;
     size_t pos = 0;
     uint64_t hash = 0;
-    // Transform to grayscale
-    status = MagickTransformImageColorspace(magick_wand, GRAYColorspace);
+    // Resize
+    status = MagickResizeImage(magick_wand, 9, 8, LanczosFilter, 1.0);
     if (status == MagickFalse) {
         set_mw_err(magick_wand, error);
         return 0;
     }
-    // Resize
-    status = MagickResizeImage(magick_wand, 9, 8, LanczosFilter, 3.0);
+    // Transform to grayscale
+    status = MagickTransformImageColorspace(magick_wand, GRAYColorspace);
     if (status == MagickFalse) {
         set_mw_err(magick_wand, error);
         return 0;
@@ -92,7 +92,6 @@ uint64_t dhash_compute_internal(MagickWand* magick_wand, dhash_err* error) {
 
             if (lbright > rbright) {
                 addOneBit(&hash, pos);
-            } else {
             }
             pos++;
         }
