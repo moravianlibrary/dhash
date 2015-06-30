@@ -10,7 +10,6 @@
 
 #include <stdint.h>
 #include <string>
-#include <istream>
 #include <vector>
 
 namespace dhash {
