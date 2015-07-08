@@ -14,9 +14,9 @@
 
 namespace dhash {
     
-    uint64_t compute(const std::string& filename);
+    std::vector<uint64_t> compute(const std::string& filename, int size = 256);
     
-    uint64_t compute(const std::vector<uint8_t>& data);
+    std::vector<uint64_t> compute(const std::vector<uint8_t>& data, int size = 256);
 }
 
 #endif	/* DHASH_H */
