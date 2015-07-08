@@ -1,6 +1,7 @@
 #include "dhash.h"
 
 #include <cmath>
+#include <stdexcept>
 
 #include <opencv2/opencv.hpp>
 
