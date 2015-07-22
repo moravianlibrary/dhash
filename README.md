@@ -1,25 +1,17 @@
 # Dependencies
-
-Library uses opencv library for image processing. You can install it in debian-based systems by command:
-
+The library is dependent on ImageMagick library. In Debian based systems you can install it by following command.
 ```
-# apt-get install libopencv-dev
+# apt-get install libmagickwand-dev
 ```
-
-# Building
-
-You can build the library by following command:
-
+# Build
+You need to have installed *automake* tools. If you have it, you just run following commands.
+```bash
+$ autoreconf -i
+$ ./configure
+$ make
 ```
-$ make all
+# Install
 ```
-
-# Installing
-
-You can install the library by copying builded files on appropriate locations in filesystem.
-
-```
-# cp dhash.h /usr/local/include
-# cp dist/Release/GNU-Linux-x86/libdhash.so /usr/local/lib
+# make install
 # ldconfig /usr/local/lib
 ```
